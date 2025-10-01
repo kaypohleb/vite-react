@@ -1,12 +1,9 @@
+@import "tailwindcss";
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,19 +12,17 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: rgba(100, 108, 255, 1);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: rgba(83, 91, 242, 1);
 }
 
 body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -42,27 +37,94 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: rgba(26, 26, 26, 1);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: rgba(100, 108, 255, 1);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.rainbow {
+	height: 100vh;
+	width: 0;
+	top: 0;
+	position: absolute;
+  filter: blur(80px);
+	transform-origin: top right;
+}
+
+.rainbow:nth-child(1) {
+  box-shadow: -25vw 0 15vw 5vw rgba(0, 0, 0, 0.75), 0px 0 40vw 30vw rgba(244, 51, 61, 0.75), 20vw 0 15vw 5vw rgba(0, 0, 0, 0.75);
+  animation: slide 10.1s linear infinite;
+  animation-delay: -1.8s;
+  transform: rotate(10deg);
+}
+
+.rainbow:nth-child(2) {
+  box-shadow: -25vw 0 15vw 5vw rgba(0, 0, 0, 0.75), 0px 0 40vw 32vw rgba(166, 23, 23, 0.75), 20vw 0 15vw 5vw rgba(0, 0, 0, 0.75);
+  animation: slide_left 11.2s linear infinite;
+  transform: rotate(6deg);
+  animation-delay: -3.6s;
+}
+
+.rainbow:nth-child(3) {
+  height: 80vh;
+  top: 0;
+  box-shadow: -25vw 0 10vw 5vw rgba(0, 0, 0, 0.75), 0px 0 30vw 25vw rgba(102, 0, 0, 0.75), 20vw 0 10vw 5vw rgba(0, 0, 0, 0.75);
+  animation: slide 20.3s linear infinite;
+  transform: rotate(12deg) ;
+  animation-delay: -9.4s;
+}
+
+.rainbow:nth-child(4) {
+  box-shadow: -25vw 0 15vw 5vw rgba(0, 0, 0, 0.75), 0px 0 40vw 18vw rgba(244, 51, 61, 0.75), 20vw 0 15vw 5vw rgba(0, 0, 0, 0.75);
+  animation: slide_left 10.5s linear infinite;
+  animation-delay: -6s;
+  transform: rotate(0deg);
+}
+
+.rainbow:nth-child(5) {
+  height: 80vh;
+  top: 20vh;
+  box-shadow: -25vw 0 15vw 5vw rgba(0, 0, 0, 0.5), 0px 0 45vw 15vw rgba(237, 109, 115, 0.75), 20vw 0 15vw 5vw rgba(0, 0, 0, 0.5);
+  animation: slide_left 15.1s linear infinite;
+  animation-delay: -2.7s;
+  transform: rotate(-5deg);
+}
+
+.rainbow:nth-child(6){
+  box-shadow: 0px 0 20vw 10vw rgba(0, 0, 0, 0.5);
+  animation: slide 10.1s linear infinite;
+  animation-delay: -7.1s;
+  transform: rotate(5deg);
+}
+
+.rainbow:nth-child(7){
+  box-shadow: 0px 0 45vw 30vw rgba(244, 51, 61, 0.8);
+  animation: slide 5.1s linear infinite;
+  animation-delay: -5.1s;
+  transform: rotate(-15deg);
+}
+
+@keyframes slide {
+  from {
+    right: -50vw;
+ }
+  to {
+    right: 150vw;
+ }
+}
+
+@keyframes slide_left {
+  from {
+    right: 150vw;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  to {
+    right: -50vw;
   }
 }
